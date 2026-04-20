@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metaimperiya | TATTOO STUDIO</title>
+    
+    <meta name="description" content="Элитный тату-салон metaimperiya. Искусство на коже, стерильность, уникальные эскизы.">
+    <meta name="keywords" content="тату, татуировка, metaimperiya, tattoo studio, эскизы, тату салон">
+
+    <style>
+        :root {
+            --gold: #ffca28;
+            --blood: #8e0000;
+            --dark: #050505;
+            --card: #121212;
+            --text: #f0f0f0;
+            --accent: #ffd700;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Garamond', serif; /* Классический дорогой стиль */
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Красивый скроллбар */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,202,40,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: lowercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(255, 202, 40, 0.5);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li { margin-left: 30px; }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--gold); text-shadow: 0 0 8px var(--gold); }
+
+        /* Главный экран */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .hero h2 {
+            font-size: clamp(40px, 8vw, 100px);
+            margin: 0;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--gold);
+            letter-spacing: 10px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 20px rgba(255,202,40,0); }
+            50% { text-shadow: 0 0 40px rgba(255,202,40,0.4); }
+        }
+
+        .hero p {
+            font-size: 18px;
+            letter-spacing: 5px;
+            color: var(--sub-text);
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: black;
+            box-shadow: 0 0 30px var(--gold);
+        }
+
+        /* Секции */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        /* Услуги - Сетка */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 40px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .price {
+            display: block;
+            margin-top: 20px;
+            font-size: 20px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Блок с цитатой */
+        .quote {
+            background: var(--blood);
+            color: white;
+            padding: 60px;
+            text-align: center;
+            font-style: italic;
+            font-size: 24px;
+            border-left: 10px solid var(--gold);
+        }
+
+        /* Футер */
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: #000;
+            border-top: 1px solid #222;
+        }
+
+        footer p { color: #555; font-size: 12px; letter-spacing: 2px; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">metaimperiya</div>
+        <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#masters">Мастера</a></li>
+            <li><a href="#contacts">Запись</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <p>art on your skin</p>
+        <h2>TATTOO STUDIO</h2>
+        <button class="btn">Записаться на сеанс</button>
+    </header>
+
+    <section id="about">
+        <div class="section-title">Философия</div>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+            Мы не просто бьем тату. Мы создаем цифровые и физические отпечатки вашей личности. 
+            Стерильность медицинского уровня, художественный подход и верность стилю **metaimperiya**.
+        </p>
+    </section>
+
+    <div class="quote">
+        "Кожа — это холст, который вы заберете с собой в вечность."
+    </div>
+
+    <section id="services">
+        <div class="section-title">Наши Услуги</div>
+        <div class="services">
+            <div class="service-card">
+                <h3>Blackwork & Graphics</h3>
+                <p>Плотный черный покрас, четкие линии и детализация.</p>
+                <span class="price">от 3000 грн</span>
+            </div>
+            <div class="service-card">
+                <h3>Realism</h3>
+                <p>Перенос портретов и сложных объектов с идеальной точностью.</p>
+                <span class="price">от 5000 грн</span>
+            </div>
+            <div class="service-card">
+                <h3>Cover Up</h3>
+                <p>Исправление или полное перекрытие старых работ любой сложности.</p>
+                <span class="price">от 4000 грн</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" style="background: #080808; text-align: center;">
+        <div class="section-title">Контакты</div>
+        <p>Адрес: Кибер-центр, сектор 4, metaimperiya hub</p>
+        <p>Телефон: +38 (0XX) XXX-XX-XX</p>
+        <p style="margin-top: 30px; color: var(--gold);">Работаем ежедневно с 12:00 до 22:00</p>
+    </section>
+
+    <footer>
+        <p>metaimperiya © 2026 | No images, just pure art</p>
+    </footer>
+
+</body>
+</html>
